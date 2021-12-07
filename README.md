@@ -21,3 +21,9 @@ It contains:
 ```shell
 git clone https://github.com/elbereth/dashninja-irc.git
 ```
+* Add the following lines to your eggdrop.conf (or whatever main eggdrop conf file you use for your bot):
+```
+# Dash IRC Bot settings
+
+#  MySQL (dashninja-db)
+set dashircbot_mysqluser "dashircbot"
