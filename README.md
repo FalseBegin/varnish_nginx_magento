@@ -38,3 +38,14 @@ set dashircbot_msglenlimit 442
 
 #  If you want to use the Twitter announces
 #   MySQL
+set dashircbot_twitter_mysqluser "dashirctwitter"
+set dashircbot_twitter_mysqlpass "someotherrandompassword"
+#   Twitter nickname
+set dashircbot_twitter_screenname "@dashpay"
+#   Update script path (needs tweet-php)
+set dashircbot_twitter_updatescript "/home/dashninja2/irc/dashircbot/helpers/updatetwitter"
+
+# Dash IRC Bot bootstrap
+source /home/dashninja2/irc/dashircbot/dashircbot.tcl
+```
+* Configure the updatetwitter helper script in ./helpers/ folder by copying updatetwitter.config.inc.php.sample to updatetwitter.config.inc.php and setting up the values as needed.
