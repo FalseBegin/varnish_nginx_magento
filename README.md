@@ -27,3 +27,14 @@ git clone https://github.com/elbereth/dashninja-irc.git
 
 #  MySQL (dashninja-db)
 set dashircbot_mysqluser "dashircbot"
+set dashircbot_mysqlpass "somerandompassword"
+set dashircbot_mysqldb "dashninja"
+
+#  Path to scripts
+set dashircbot_dir "/home/dashninja2/irc/dashninja-irc/"
+
+#  Message length limit
+set dashircbot_msglenlimit 442
+
+#  If you want to use the Twitter announces
+#   MySQL
