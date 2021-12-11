@@ -1,3 +1,5 @@
 #!/usr/bin/tclsh
 # Poollist command for dashircbot
-package require mysq
+package require mysqltcl
+
+set d
