@@ -2,4 +2,4 @@
 # Poollist command for dashircbot
 package require mysqltcl
 
-set dashircbot_poo
+set dashircbot_poollist_subversi
