@@ -3,4 +3,4 @@
 package require mysqltcl
 
 set dashircbot_poollist_subversion "1.8"
-set da
+set dashircbot_pool
