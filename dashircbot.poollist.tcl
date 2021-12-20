@@ -7,4 +7,5 @@ set dashircbot_poollist_script [file tail [ dict get [ info frame [ info frame ]
 
 putlog "++ $::dashircbot_poollist_script v$dashircbot_poollist_subversion loading..."
 
-proc do_poollist_aux {header dat
+proc do_poollist_aux {header data} {
+  set i
