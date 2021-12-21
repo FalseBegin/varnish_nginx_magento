@@ -9,4 +9,4 @@ putlog "++ $::dashircbot_poollist_script v$dashircbot_poollist_subversion loadin
 
 proc do_poollist_aux {header data} {
   set ircline ""
-  se
+  set irclines []
