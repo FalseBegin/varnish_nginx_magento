@@ -11,4 +11,5 @@ proc do_poollist_aux {header data} {
   set ircline ""
   set irclines []
   foreach line $data {
-    set irclinelen [string length $irc
+    set irclinelen [string length $ircline]
+    if
