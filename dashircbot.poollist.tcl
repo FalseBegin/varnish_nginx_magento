@@ -13,4 +13,5 @@ proc do_poollist_aux {header data} {
   foreach line $data {
     set irclinelen [string length $ircline]
     if {$line != ""} {
-      set info [split $li
+      set info [split $line " "]
+      
