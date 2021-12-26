@@ -12,4 +12,5 @@ proc do_poollist_aux {header data} {
   set irclines []
   foreach line $data {
     set irclinelen [string length $ircline]
-    if {$line != ""}
+    if {$line != ""} {
+      set inf
