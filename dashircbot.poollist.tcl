@@ -14,4 +14,4 @@ proc do_poollist_aux {header data} {
     set irclinelen [string length $ircline]
     if {$line != ""} {
       set info [split $line " "]
-      lassign $info username url
+      lassign $info username url type miningfe
