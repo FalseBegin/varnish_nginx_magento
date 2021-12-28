@@ -15,4 +15,4 @@ proc do_poollist_aux {header data} {
     if {$line != ""} {
       set info [split $line " "]
       lassign $info username url type miningfee wdmin wdfeeauto wdfeeman
-      set newentry "( $url \[$type/$min
+      set newentry "( $url \[$type/$miningfee\] 
