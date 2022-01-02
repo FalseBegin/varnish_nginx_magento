@@ -17,4 +17,4 @@ proc do_poollist_aux {header data} {
       lassign $info username url type miningfee wdmin wdfeeauto wdfeeman
       set newentry "( $url \[$type/$miningfee\] Withdraw >=$wdmin fees auto=$wdfeeauto man=$wdfeeman )"
       set newentrylen [string length $newentry]
-      set t
+      set totallen 
