@@ -18,4 +18,5 @@ proc do_poollist_aux {header data} {
       set newentry "( $url \[$type/$miningfee\] Withdraw >=$wdmin fees auto=$wdfeeauto man=$wdfeeman )"
       set newentrylen [string length $newentry]
       set totallen [expr $newentrylen+$irclinelen]
-      if {$irclinelen ==
+      if {$irclinelen == 0} {
+    
