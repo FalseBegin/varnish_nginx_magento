@@ -19,4 +19,4 @@ proc do_poollist_aux {header data} {
       set newentrylen [string length $newentry]
       set totallen [expr $newentrylen+$irclinelen]
       if {$irclinelen == 0} {
-    
+        set ircl
