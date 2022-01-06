@@ -20,4 +20,4 @@ proc do_poollist_aux {header data} {
       set totallen [expr $newentrylen+$irclinelen]
       if {$irclinelen == 0} {
         set ircline ""
-      } elseif {$totallen > $::d
+      } elseif {$totallen > $::dashircbot_msgle
