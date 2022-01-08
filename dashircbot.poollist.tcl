@@ -23,4 +23,5 @@ proc do_poollist_aux {header data} {
       } elseif {$totallen > $::dashircbot_msglenlimit} {
         lappend irclines "$ircline"
         set ircline ""
-      
+      } else {
+   
