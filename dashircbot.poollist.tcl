@@ -24,4 +24,4 @@ proc do_poollist_aux {header data} {
         lappend irclines "$ircline"
         set ircline ""
       } else {
-        set ircline "$
+        set ircline "$irclin
