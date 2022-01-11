@@ -26,4 +26,5 @@ proc do_poollist_aux {header data} {
       } else {
         set ircline "$ircline|"
       }
-      set ircline "$ircline$newe
+      set ircline "$ircline$newentry"
+    }
