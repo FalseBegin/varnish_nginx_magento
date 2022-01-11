@@ -26,3 +26,4 @@ proc do_poollist_aux {header data} {
       } else {
         set ircline "$ircline|"
       }
+      set irc
