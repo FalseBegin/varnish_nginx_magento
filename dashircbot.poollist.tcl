@@ -29,4 +29,4 @@ proc do_poollist_aux {header data} {
       set ircline "$ircline$newentry"
     }
   }
-  if {[string le
+  if {[string length $ircline
