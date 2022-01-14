@@ -30,4 +30,6 @@ proc do_poollist_aux {header data} {
     }
   }
   if {[string length $ircline] > 0} {
-    lappend irclines "$ircli
+    lappend irclines "$ircline"
+  }
+  set 
