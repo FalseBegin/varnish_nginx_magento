@@ -32,4 +32,4 @@ proc do_poollist_aux {header data} {
   if {[string length $ircline] > 0} {
     lappend irclines "$ircline"
   }
-  set irclinescoun
+  set irclinescount [llen
