@@ -34,4 +34,4 @@ proc do_poollist_aux {header data} {
   }
   set irclinescount [llength $irclines]
   if {$irclinescount > 0} {
-    putlog "dashircbot v$::dashircbot
+    putlog "dashircbot v$::dashircbot_version (
