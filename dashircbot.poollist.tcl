@@ -37,4 +37,4 @@ proc do_poollist_aux {header data} {
     putlog "dashircbot v$::dashircbot_version ($::dashircbot_poollist_script v$::dashircbot_poollist_subversion) \[I\] [lindex [info level 0] 0] output $irclinescount line(s)"
     set idxn 1
     foreach line $irclines {
-      if {$irclinescou
+      if {$irclinescount == 1} {
