@@ -38,4 +38,4 @@ proc do_poollist_aux {header data} {
     set idxn 1
     foreach line $irclines {
       if {$irclinescount == 1} {
-        puthelp "$he
+        puthelp "$header POO
