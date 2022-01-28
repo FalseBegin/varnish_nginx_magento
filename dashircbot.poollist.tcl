@@ -40,4 +40,4 @@ proc do_poollist_aux {header data} {
       if {$irclinescount == 1} {
         puthelp "$header POOLS $line"
       } else {
-  
+        
