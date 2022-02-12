@@ -42,4 +42,5 @@ proc do_poollist_aux {header data} {
       } else {
         puthelp "$header POOLS \[$idxn/$irclinescount\] $line"
       }
-    
+      incr idxn
+  
