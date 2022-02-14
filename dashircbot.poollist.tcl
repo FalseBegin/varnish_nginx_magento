@@ -47,3 +47,4 @@ proc do_poollist_aux {header data} {
   }
 }
 
+proc do_poollist {ni
