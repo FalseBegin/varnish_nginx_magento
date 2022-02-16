@@ -48,4 +48,4 @@ proc do_poollist_aux {header data} {
 }
 
 proc do_poollist {nick chan} {
-  putlog "dashircbot v$::dashircbot_ver
+  putlog "dashircbot v$::dashircbot_version ($::dash
