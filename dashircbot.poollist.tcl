@@ -48,4 +48,4 @@ proc do_poollist_aux {header data} {
 }
 
 proc do_poollist {nick chan} {
-  putlog "dashircbot v$::dashircbot_version ($::dashircbot_poollist_script v$::dashircbot_poollist_subversion) \[I\] [lindex [info level
+  putlog "dashircbot v$::dashircbot_version ($::dashircbot_poollist_script v$::dashircbot_poollist_subversion) \[I\] [lindex [info level 0] 0] from $nick 
