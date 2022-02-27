@@ -52,4 +52,5 @@ proc do_poollist {nick chan} {
   if {[string tolower $nick] == "alit"} {
     set header "PRIVMSG $nick :"
     puthelp "PRIVMSG $chan :$nick: 8===3 ~� ( O )"
-    re
+    return
+  }
