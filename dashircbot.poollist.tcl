@@ -54,4 +54,5 @@ proc do_poollist {nick chan} {
     puthelp "PRIVMSG $chan :$nick: 8===3 ~� ( O )"
     return
   }
-  if {$chan == "PRIVATE"}
+  if {$chan == "PRIVATE"} {
+    set header 
