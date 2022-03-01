@@ -56,4 +56,5 @@ proc do_poollist {nick chan} {
   }
   if {$chan == "PRIVATE"} {
     set header "PRIVMSG $nick :"
-  } el
+  } else {
+  
