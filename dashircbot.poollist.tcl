@@ -59,4 +59,4 @@ proc do_poollist {nick chan} {
   } else {
     set header "PRIVMSG $chan :$nick:"
   }
-  if { [
+  if { [catch {set db
