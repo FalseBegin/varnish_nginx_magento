@@ -59,4 +59,4 @@ proc do_poollist {nick chan} {
   } else {
     set header "PRIVMSG $chan :$nick:"
   }
-  if { [catch {set db [::mysql::conne
+  if { [catch {set db [::mysql::connect -user $::
