@@ -60,4 +60,4 @@ proc do_poollist {nick chan} {
     set header "PRIVMSG $chan :$nick:"
   }
   if { [catch {set db [::mysql::connect -user $::dashircbot_mysqluser -password $::dashircbot_mysqlpass -db $::dashircbot_mysqldb]} errmsg] } {
-    putlog "dashircbot v$::dashircbot_versio
+    putlog "dashircbot v$::dashircbot_version ($::das
