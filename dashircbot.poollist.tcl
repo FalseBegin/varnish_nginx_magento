@@ -63,4 +63,4 @@ proc do_poollist {nick chan} {
     putlog "dashircbot v$::dashircbot_version ($::dashircbot_poollist_script v$::dashircbot_poollist_subversion) \[E\] [lindex [info level 0] 0] $errmsg"
     puthelp "$header Command temporary unavailable."
   } else {
-    if { [ca
+    if { [catch {set data [
