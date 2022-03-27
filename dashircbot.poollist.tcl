@@ -66,4 +66,5 @@ proc do_poollist {nick chan} {
     if { [catch {set data [::mysql::sel $db "SELECT ircnickowner, url, pooltype, fee, wdmin, wdautofee, wdmanfee FROM cmd_pools_list" -list]} errmsg] } {
       putlog "dashircbot v$::dashircbot_version ($::dashircbot_poollist_script v$::dashircbot_poollist_subversion) \[E\] [lindex [info level 0] 0] $errmsg"
       puthelp "$header Command temporary unavailable."
-      ::mysql::clos
+      ::mysql::close $db
+    } else
