@@ -68,4 +68,4 @@ proc do_poollist {nick chan} {
       puthelp "$header Command temporary unavailable."
       ::mysql::close $db
     } else {
-      ::mysq
+      ::mysql::close $
