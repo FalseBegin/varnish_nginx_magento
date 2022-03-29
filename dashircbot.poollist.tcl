@@ -69,4 +69,5 @@ proc do_poollist {nick chan} {
       ::mysql::close $db
     } else {
       ::mysql::close $db
-      do_poollist_aux
+      do_poollist_aux $header $data
+    
