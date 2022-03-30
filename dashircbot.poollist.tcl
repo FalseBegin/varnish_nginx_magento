@@ -74,4 +74,5 @@ proc do_poollist {nick chan} {
   }
 }
 
-# Bi
+# Bindings
+pro
