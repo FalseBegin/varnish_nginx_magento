@@ -70,4 +70,5 @@ proc do_poollist {nick chan} {
     } else {
       ::mysql::close $db
       do_poollist_aux $header $data
-    
+    }
+  }
