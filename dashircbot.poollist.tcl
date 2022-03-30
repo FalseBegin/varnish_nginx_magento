@@ -72,3 +72,6 @@ proc do_poollist {nick chan} {
       do_poollist_aux $header $data
     }
   }
+}
+
+# Bi
