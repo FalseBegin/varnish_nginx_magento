@@ -75,4 +75,4 @@ proc do_poollist {nick chan} {
 }
 
 # Bindings
-proc pub:poollist 
+proc pub:poollist {nick host
