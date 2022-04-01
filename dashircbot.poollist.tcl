@@ -78,3 +78,4 @@ proc do_poollist {nick chan} {
 proc pub:poollist {nick host handle chan {text ""}} {
   do_poollist $nick $chan
 }
+proc 
