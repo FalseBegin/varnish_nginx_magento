@@ -82,4 +82,4 @@ proc msg:poollist {nick uhost handle text} {
   do_poollist $nick "PRIVATE"
 }
 
-bind ms
+bind msg - !pool 
