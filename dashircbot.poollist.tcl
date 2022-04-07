@@ -83,4 +83,4 @@ proc msg:poollist {nick uhost handle text} {
 }
 
 bind msg - !pool msg:poollist
-bind pub - !pool
+bind pub - !pool pub:pooll
