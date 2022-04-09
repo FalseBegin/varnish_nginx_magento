@@ -87,4 +87,4 @@ bind pub - !pool pub:poollist
 bind msg - !pools msg:poollist
 bind pub - !pools pub:poollist
 bind msg - !poollist msg:poollist
-b
+bind pub - !pool
