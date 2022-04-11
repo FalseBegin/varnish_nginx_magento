@@ -89,4 +89,4 @@ bind pub - !pools pub:poollist
 bind msg - !poollist msg:poollist
 bind pub - !poollist pub:poollist
 
-lappend dashircbot_comm
+lappend dashircbot_command_fr { {!
