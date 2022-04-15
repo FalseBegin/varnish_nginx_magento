@@ -90,4 +90,4 @@ bind msg - !poollist msg:poollist
 bind pub - !poollist pub:poollist
 
 lappend dashircbot_command_fr { {!pool} {Poles de minage} }
-lappend dashirc
+lappend dashircbot_command_en 
