@@ -92,4 +92,4 @@ bind pub - !poollist pub:poollist
 lappend dashircbot_command_fr { {!pool} {Poles de minage} }
 lappend dashircbot_command_en { {!pool} {Mining pools} }
 
-putlog "++ $::dashircbot_poollist
+putlog "++ $::dashircbot_poollist_script v$d
