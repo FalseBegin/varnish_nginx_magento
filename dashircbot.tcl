@@ -1,1 +1,1 @@
-set dashircbot_v
+set dashircbot_version "1.1.0"
