@@ -5,4 +5,4 @@ set dashircbot_script [file tail [ dict get [ info frame [ info frame ] ] file ]
 set dashircbot_command_en ""
 set dashircbot_command_fr ""
 
-putlog "$
+putlog "$::dashircbot_sc
