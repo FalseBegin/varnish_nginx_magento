@@ -5,4 +5,5 @@ set dashircbot_script [file tail [ dict get [ info frame [ info frame ] ] file ]
 set dashircbot_command_en ""
 set dashircbot_command_fr ""
 
-putlog "$::dashircbot_script v$::dashircbot_version (by elberethzone) loadin
+putlog "$::dashircbot_script v$::dashircbot_version (by elberethzone) loading..."
+set pu
