@@ -8,4 +8,4 @@ set dashircbot_command_fr ""
 putlog "$::dashircbot_script v$::dashircbot_version (by elberethzone) loading..."
 set putlogloaded "$::dashircbot_script v$::dashircbot_version (by elberethzone) loaded!"
 
-set dashir
+set dashircbot_commandl
