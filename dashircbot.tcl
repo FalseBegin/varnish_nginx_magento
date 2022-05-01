@@ -9,4 +9,5 @@ putlog "$::dashircbot_script v$::dashircbot_version (by elberethzone) loading...
 set putlogloaded "$::dashircbot_script v$::dashircbot_version (by elberethzone) loaded!"
 
 set dashircbot_commandlist_en ""
-set dashircbot_command
+set dashircbot_commandlist_fr ""
+
