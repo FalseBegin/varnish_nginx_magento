@@ -11,4 +11,4 @@ set putlogloaded "$::dashircbot_script v$::dashircbot_version (by elberethzone) 
 set dashircbot_commandlist_en ""
 set dashircbot_commandlist_fr ""
 
-proc dashircbot
+proc dashircbot_command_cmp {
