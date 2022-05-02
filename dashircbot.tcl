@@ -12,4 +12,4 @@ set dashircbot_commandlist_en ""
 set dashircbot_commandlist_fr ""
 
 proc dashircbot_command_cmp {a b} {
- 
+  return [s
