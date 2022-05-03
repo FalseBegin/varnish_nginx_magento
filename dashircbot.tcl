@@ -12,4 +12,4 @@ set dashircbot_commandlist_en ""
 set dashircbot_commandlist_fr ""
 
 proc dashircbot_command_cmp {a b} {
-  return [string compare [linde
+  return [string compare [lindex $a 0] [lindex $b 0]
