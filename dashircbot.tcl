@@ -15,4 +15,4 @@ proc dashircbot_command_cmp {a b} {
   return [string compare [lindex $a 0] [lindex $b 0]]
 }
 
-# 
+# Load sub
