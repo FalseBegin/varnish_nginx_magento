@@ -16,4 +16,4 @@ proc dashircbot_command_cmp {a b} {
 }
 
 # Load sub-scripts
-set subfiles [glob -di
+set subfiles [glob -dir "$::dashircb
