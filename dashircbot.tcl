@@ -17,4 +17,5 @@ proc dashircbot_command_cmp {a b} {
 
 # Load sub-scripts
 set subfiles [glob -dir "$::dashircbot_dir" dashircbot.*.tcl]
-putlog "== Found [llength $subfiles] sub-scripts t
+putlog "== Found [llength $subfiles] sub-scripts to load:"
+fo
