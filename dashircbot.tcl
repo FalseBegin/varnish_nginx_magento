@@ -22,4 +22,5 @@ foreach subfile $subfiles {
   source $subfile
 }
 
-# Sort
+# Sort commands
+set d
