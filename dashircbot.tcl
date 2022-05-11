@@ -23,4 +23,4 @@ foreach subfile $subfiles {
 }
 
 # Sort commands
-set d
+set dashircbot
