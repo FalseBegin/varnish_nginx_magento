@@ -23,4 +23,4 @@ foreach subfile $subfiles {
 }
 
 # Sort commands
-set dashircbot_command_en [lsort -comman
+set dashircbot_command_en [lsort -command dashircbot_com
