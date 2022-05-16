@@ -26,4 +26,5 @@ foreach subfile $subfiles {
 set dashircbot_command_en [lsort -command dashircbot_command_cmp $dashircbot_command_en]
 set dashircbot_command_fr [lsort -command dashircbot_command_cmp $dashircbot_command_fr]
 
-# Prepare the command list for !he
+# Prepare the command list for !help display
+set 
