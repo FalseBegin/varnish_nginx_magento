@@ -27,4 +27,5 @@ set dashircbot_command_en [lsort -command dashircbot_command_cmp $dashircbot_com
 set dashircbot_command_fr [lsort -command dashircbot_command_cmp $dashircbot_command_fr]
 
 # Prepare the command list for !help display
-set 
+set idxn 0
+s
