@@ -28,4 +28,5 @@ set dashircbot_command_fr [lsort -command dashircbot_command_cmp $dashircbot_com
 
 # Prepare the command list for !help display
 set idxn 0
-set totnen [llength $dashircbot_command_
+set totnen [llength $dashircbot_command_en]
+set to
