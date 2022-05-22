@@ -32,4 +32,4 @@ set totnen [llength $dashircbot_command_en]
 set totn [expr $totnen-1]
 foreach line $dashircbot_command_en {
   set command [lindex $line 0]
-  set de
+  set desc [linde
