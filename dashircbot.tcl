@@ -34,4 +34,4 @@ foreach line $dashircbot_command_en {
   set command [lindex $line 0]
   set desc [lindex $line 1]
   if { $desc == "" } {
-    set dash
+    set dashircbot
