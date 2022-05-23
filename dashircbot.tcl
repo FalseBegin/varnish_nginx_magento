@@ -33,4 +33,5 @@ set totn [expr $totnen-1]
 foreach line $dashircbot_command_en {
   set command [lindex $line 0]
   set desc [lindex $line 1]
-  if { $desc == "" }
+  if { $desc == "" } {
+    set dash
