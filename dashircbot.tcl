@@ -36,4 +36,4 @@ foreach line $dashircbot_command_en {
   if { $desc == "" } {
     set dashircbot_commandlist_en "$dashircbot_commandlist_en\( $command )"
   } else {
-    set dashircbot_commandlist_e
+    set dashircbot_commandlist_en "$dash
