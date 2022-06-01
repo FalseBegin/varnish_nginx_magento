@@ -43,4 +43,5 @@ foreach line $dashircbot_command_en {
   }
   incr idxn
 }
-set 
+set idxn 0
+set to
