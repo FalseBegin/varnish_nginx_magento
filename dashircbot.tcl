@@ -44,4 +44,4 @@ foreach line $dashircbot_command_en {
   incr idxn
 }
 set idxn 0
-set totnfr [llength $da
+set totnfr [llength $dashircbot_co
