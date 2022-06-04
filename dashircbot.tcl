@@ -46,4 +46,4 @@ foreach line $dashircbot_command_en {
 set idxn 0
 set totnfr [llength $dashircbot_command_fr]
 set totn [expr $totnen-1]
-foreach lin
+foreach line $dashircbot
