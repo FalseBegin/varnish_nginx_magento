@@ -50,4 +50,5 @@ foreach line $dashircbot_command_fr {
   set command [lindex $line 0]
   set desc [lindex $line 1]
   if { $desc == "" } {
-    set dashircbot_commandlist_fr "$dashircbot_commandlist_fr
+    set dashircbot_commandlist_fr "$dashircbot_commandlist_fr\( $command )"
+  }
