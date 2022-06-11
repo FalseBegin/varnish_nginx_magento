@@ -52,4 +52,4 @@ foreach line $dashircbot_command_fr {
   if { $desc == "" } {
     set dashircbot_commandlist_fr "$dashircbot_commandlist_fr\( $command )"
   } else {
-    set dashircbot_commandlist_fr 
+    set dashircbot_commandlist_fr "$dashircbot_comman
