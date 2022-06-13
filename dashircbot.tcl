@@ -54,4 +54,5 @@ foreach line $dashircbot_command_fr {
   } else {
     set dashircbot_commandlist_fr "$dashircbot_commandlist_fr\( $command - $desc )"
   }
-  if { $i
+  if { $idxn < $totn } {
+    se
