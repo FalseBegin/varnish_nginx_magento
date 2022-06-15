@@ -59,3 +59,5 @@ foreach line $dashircbot_command_fr {
   }
   incr idxn
 }
+
+putlog "
