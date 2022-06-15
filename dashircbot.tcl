@@ -57,4 +57,5 @@ foreach line $dashircbot_command_fr {
   if { $idxn < $totn } {
     set dashircbot_commandlist_fr "$dashircbot_commandlist_fr|"
   }
-  incr
+  incr idxn
+}
