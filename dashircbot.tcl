@@ -60,4 +60,4 @@ foreach line $dashircbot_command_fr {
   incr idxn
 }
 
-putlog "$putlogloaded (EN/FR $totnen/$totnfr
+putlog "$putlogloaded (EN/FR $totnen/$totnfr commands re
