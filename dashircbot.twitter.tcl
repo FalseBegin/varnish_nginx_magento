@@ -22,3 +22,14 @@ proc do_fetch_lasttweetid {} {
       } else {
         ::mysql::close $db
         set ::dashircbot_twitter_lasttweetid [lindex $data 0]
+        putlog "dashircbot v$::dashircbot_version ($::dashircbot_twitter_script v$::dashircbot_twitter_subversion) \[I\] [lindex [info level 0] 0] success: $::dashircbot_twitter_lasttweetid"
+      }
+    }
+  }
+  return [expr $::dashircbot_twitter_lasttweetid > 0]
+}
+
+proc do_save_lasttweetid {} {
+  if {$::dashircbot_twitter_lasttweetid != 0} {
+    if { [catch {set db [::mysql::connect -user $::dashircbot_twitter_mysqluser -password $::dashircbot_twitter_mysqlpass -db $::dashircbot_mysqldb]} errmsg] } {
+      putlog "dashircbot v$::dashircbot_version ($::dashircbot_twitter_script v$::dashircbot_twitter_subversion) \[E\] [lindex [info level 0] 0] $errmsg"
