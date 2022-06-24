@@ -33,3 +33,16 @@ proc do_save_lasttweetid {} {
   if {$::dashircbot_twitter_lasttweetid != 0} {
     if { [catch {set db [::mysql::connect -user $::dashircbot_twitter_mysqluser -password $::dashircbot_twitter_mysqlpass -db $::dashircbot_mysqldb]} errmsg] } {
       putlog "dashircbot v$::dashircbot_version ($::dashircbot_twitter_script v$::dashircbot_twitter_subversion) \[E\] [lindex [info level 0] 0] $errmsg"
+    } else {
+      if { [catch {set data [::mysql::exec $db "UPDATE cmd_stats_values SET StatValue = $::dashircbot_twitter_lasttweetid WHERE StatKey = 'tweetlastdrkc'"]} errmsg] } {
+        putlog "dashircbot v$::dashircbot_version ($::dashircbot_twitter_script v$::dashircbot_twitter_subversion) \[E\] [lindex [info level 0] 0] $errmsg"
+        ::mysql::close $db
+      } else {
+        putlog "dashircbot v$::dashircbot_version ($::dashircbot_twitter_script v$::dashircbot_twitter_subversion) \[I\] [lindex [info level 0] 0] success: $::dashircbot_twitter_lasttweetid"
+        ::mysql::close $db
+      }
+    }
+  }
+}
+
+proc do_showtwitter {} {
