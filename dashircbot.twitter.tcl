@@ -46,3 +46,18 @@ proc do_save_lasttweetid {} {
 }
 
 proc do_showtwitter {} {
+  global dashircbot_twitter_timer dashircbot_twitter_screenname
+  if { [catch {set test [exec $::dashircbot_twitter_updatescript]} errmsg] } {
+    putlog "dashircbot v$::dashircbot_version ($::dashircbot_twitter_script v$::dashircbot_twitter_subversion) \[E\] [lindex [info level 0] 0] $errmsg"
+  } else {
+    if {[do_fetch_lasttweetid]} {
+      if { [catch {set db [::mysql::connect -user $::dashircbot_mysqluser -password $::dashircbot_mysqlpass -db $::dashircbot_mysqldb]} errmsg] } {
+        putlog "dashircbot v$::dashircbot_version ($::dashircbot_twitter_script v$::dashircbot_twitter_subversion) \[E\] [lindex [info level 0] 0] $errmsg"
+      } else {
+        if { [catch {set data [::mysql::sel $db "SELECT * FROM cmd_twitter WHERE account = '$dashircbot_twitter_screenname' AND id > $::dashircbot_twitter_lasttweetid ORDER BY id" -list]} errmsg] } {
+          putlog "dashircbot v$::dashircbot_version ($::dashircbot_twitter_script v$::dashircbot_twitter_subversion) \[E\] [lindex [info level 0] 0] $errmsg"
+          ::mysql::close $db
+        } else {
+          ::mysql::close $db
+          if {[llength $data] > 0} {
+            foreach line $data {
