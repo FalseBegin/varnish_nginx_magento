@@ -61,3 +61,13 @@ proc do_showtwitter {} {
           ::mysql::close $db
           if {[llength $data] > 0} {
             foreach line $data {
+              putlog "dashircbot v$::dashircbot_version ($::dashircbot_twitter_script v$::dashircbot_twitter_subversion) \[I\] [lindex [info level 0] 0] New tweet: [lindex $line 0] ([lindex $line 2]): [lindex $line 3]"
+              regsub -all {\n} [lindex $line 3] " " tweettext
+              puthelp "PRIVMSG #dash-fr :TWITTER FEED [lindex $line 0] ([lindex $line 2]): $tweettext"
+              puthelp "PRIVMSG #dashpay :TWITTER FEED [lindex $line 0] ([lindex $line 2]): $tweettext"
+              if {[lindex $line 1] > $::dashircbot_twitter_lasttweetid} {
+                set ::dashircbot_twitter_lasttweetid [lindex $line 1]
+              }
+            }
+            do_save_lasttweetid
+          } else {
