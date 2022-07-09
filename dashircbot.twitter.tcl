@@ -93,3 +93,13 @@ proc do_killtwitter {} {
 # Bindings
 proc dcc:killtwitter {handle idx text} {
   do_killtwitter
+}
+proc dcc:starttwitter {handle idx text} {
+  do_showtwitter
+}
+
+bind dcc m|m killtwitter dcc:killtwitter
+bind dcc m|m starttwitter dcc:starttwitter
+
+putlog "++ $::dashircbot_twitter_script v$dashircbot_twitter_subversion loaded!"
+do_showtwitter
