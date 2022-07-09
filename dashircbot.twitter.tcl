@@ -71,3 +71,16 @@ proc do_showtwitter {} {
             }
             do_save_lasttweetid
           } else {
+            putlog "dashircbot v$::dashircbot_version ($::dashircbot_twitter_script v$::dashircbot_twitter_subversion) \[I\] [lindex [info level 0] 0] - No new tweets"
+          }
+        }
+      }
+    } else {
+      putlog "dashircbot v$::dashircbot_version ($::dashircbot_twitter_script v$::dashircbot_twitter_subversion) \[E\] [lindex [info level 0] 0] Failed!"
+    }
+  }
+  timer 5 do_showtwitter
+}
+
+proc do_killtwitter {} {
+  foreach ctimer [timers] {
