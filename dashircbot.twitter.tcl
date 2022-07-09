@@ -84,3 +84,12 @@ proc do_showtwitter {} {
 
 proc do_killtwitter {} {
   foreach ctimer [timers] {
+    if { [lindex $ctimer 1] == "do_showtwitter" } {
+      killtimer [lindex $ctimer 2]
+    }
+  }
+}
+
+# Bindings
+proc dcc:killtwitter {handle idx text} {
+  do_killtwitter
