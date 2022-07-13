@@ -45,3 +45,15 @@ set dashircbot_translation [dict create \
         "en" " (source:%s|%s)" \
         "fr" " (source:%s|%s)"] \
                                     "result_marketcap" [dict create \
+        "en" "Dash position = %d with %s BTC market cap (%s %s with supply of %s DASH) and a 24h volume of %s BTC (%s %s) %s%% (source:%s|%s)" \
+        "fr" "Position Dash = %d avec une capitalisation marche de %s BTC (%s %s avec un total de %s DASH) et un volume journalier de %s BTC (%s %s) %s%% (source:%s|%s)"] \
+                                    "result_mnstats" [dict create \
+        "en" "%d active masternodes (source:%s|%s) ATH = %d (%s UTC) @ %s DASH/BTC (source:%s|%s) = %.2f BTC / %.2f %s in stake (source:%s|%s)" \
+        "fr" "%d active masternodes (source:%s|%s) ATH = %d (%s UTC) @ %s DASH/BTC (source:%s|%s) = %.2f BTC / %.2f %s en épargne (source:%s|%s)"] \
+                                    "result_mnworth" [dict create \
+        "en" "%s masternodes = %.3f DASH/Day (source:%s|%s) using %s%% blocks paid at %s%% last 24h (source:%s|%s) @ %s DASH/BTC (source:%s|%s) = %.9f BTC/Day / %.2f %s/Day (source:%s|%s)" \
+        "fr" "%s masternodes = %.3f DASH/Jour (source:%s|%s) avec %s%% des blocs payés à %s%% ces dernières 24h (source:%s|%s) @ %s DASH/BTC (source:%s|%s) = %.9f BTC/Jour / %.2f %s/Jour (source:%s|%s)"] \
+                                    "result_worth" [dict create \
+        "en" "%s DASH @ %s DASH/BTC (source:%s|%s) = %.6f BTC / %.2f %s (source:%s|%s)" \
+        "fr" "%s DASH @ %s DASH/BTC (source:%s|%s) = %.6f BTC / %.2f %s (source:%s|%s)"] \
+ ]
