@@ -32,3 +32,16 @@ set dashircbot_translation [dict create \
                                     "result_calc" [dict create \
         "en" "With last 24h supply of %s DASH (source:%s|%s) and a network hashrate of %s (source:%s|%s) your %s would have generated %.9f DASH @ %s DASH/BTC (source:%s|%s) = %.9f BTC/Day / %.2f %s/Day (source:%s|%s)" \
         "fr" "Avec %s générés ces derniéres 24h (source:%s|%s) et un hachage réseau de %s (source:%s|%s) vos %s aurais généré %.9f DASH @ %s DASH/BTC (source:%s|%s) = %.9f BTC/Day / %.2f %s/Day (source:%s|%s)"] \
+                                    "result_diff" [dict create \
+        "en" "%s difficulty: %s%s Coin generation: %.2f DASH miner (%s%%) + %.2f DASH masternode (%s%%) + %.2f DASH budgets (%s%%) = %.2f DASH total" \
+        "fr" "Difficulté %s: %s%s Génération de piéces: %.2f DASH mineur (%s%%) + %.2f DASH masternode (%s%%) + %.2f DASH budgets (%s%%) = %.2f DASH au total"] \
+                                    "result_diff_asked" [dict create \
+        "en" "Asked" \
+        "fr" "demandée"] \
+                                    "result_diff_current" [dict create \
+        "en" "Current" \
+        "fr" "actuelle"] \
+                                    "result_diff_source" [dict create \
+        "en" " (source:%s|%s)" \
+        "fr" " (source:%s|%s)"] \
+                                    "result_marketcap" [dict create \
