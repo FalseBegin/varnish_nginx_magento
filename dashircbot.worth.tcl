@@ -22,3 +22,13 @@ set dashircbot_translation [dict create \
         "fr" "Utilisation: !mnvaleur\[fiat\] <nombre_de_masternodes> - \[fiat\] peux être eur ou usd (par défaut: usd) - Ex: !mnvaleur 2 ou !mnv"] \
                                     "usage_worth" [dict create \
         "en" "Usage: !worth\[fiat\] <amount_DASH|Dash_Address> - \[fiat\] can be eur or usd (default: usd) - Ex: !worth 1234.5 or !worth Xr57hNKbEzNHFkTsUmfhPxKRfnnt9nVe7z or !w 76" \
+        "fr" "Utilisation: !valeur\[fiat\] <montant_DASH|Addresse_Dash> - \[fiat\] peux être eur ou usd (par défaut: usd) - Ex: !valeur 1234.5 ou !valeur Xr57hNKbEzNHFkTsUmfhPxKRfnnt9nVe7z ou !v 76"] \
+                                    "action_unavailable" [dict create \
+        "en" "Command is temporarily unavailable." \
+        "fr" "Commande temporairement indisponible."] \
+                                    "action_unknown" [dict create \
+        "en" "Command %s is unknown." \
+        "fr" "Commande %s inconnue."] \
+                                    "result_calc" [dict create \
+        "en" "With last 24h supply of %s DASH (source:%s|%s) and a network hashrate of %s (source:%s|%s) your %s would have generated %.9f DASH @ %s DASH/BTC (source:%s|%s) = %.9f BTC/Day / %.2f %s/Day (source:%s|%s)" \
+        "fr" "Avec %s générés ces derniéres 24h (source:%s|%s) et un hachage réseau de %s (source:%s|%s) vos %s aurais généré %.9f DASH @ %s DASH/BTC (source:%s|%s) = %.9f BTC/Day / %.2f %s/Day (source:%s|%s)"] \
