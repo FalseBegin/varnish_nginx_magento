@@ -63,3 +63,14 @@ set dashircbot_tablevar_refreshinterval 30
 putlog "++ $::dashircbot_worth_script v$dashircbot_worth_subversion loading..."
 
 set dashircbot_tablevar [dict create]
+set dashircbot_tablevarlast 0
+
+proc dashircbot_getdeltatime {from to} {
+
+  set res ""
+  set delta [expr $to-$from]
+  if {$delta < 0} {
+    set delta 0
+  }
+  set deltasec [expr $delta%60]
+  set deltamin [expr ($delta/60)%60]
