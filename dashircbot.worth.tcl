@@ -57,3 +57,9 @@ set dashircbot_translation [dict create \
         "en" "%s DASH @ %s DASH/BTC (source:%s|%s) = %.6f BTC / %.2f %s (source:%s|%s)" \
         "fr" "%s DASH @ %s DASH/BTC (source:%s|%s) = %.6f BTC / %.2f %s (source:%s|%s)"] \
  ]
+
+set dashircbot_tablevar_refreshinterval 30
+
+putlog "++ $::dashircbot_worth_script v$dashircbot_worth_subversion loading..."
+
+set dashircbot_tablevar [dict create]
