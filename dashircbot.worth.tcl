@@ -74,3 +74,15 @@ proc dashircbot_getdeltatime {from to} {
   }
   set deltasec [expr $delta%60]
   set deltamin [expr ($delta/60)%60]
+  set deltahour [expr ($delta/3600)%24]
+  set deltaday [expr int(floor($delta/86400))]
+#  putlog "dashircbot v$::dashircbot_version ($::dashircbot_worth_script v$::dashircbot_worth_subversion) \[I\] [lindex [info level 0] 0] $delta $deltasec $deltamin $deltahour $deltaday"
+  if {$deltaday > 0} {
+    set res "$res[format "%d" $deltaday]d"
+  }
+  if {$deltahour > 0} {
+    set res "$res[format "%d" $deltahour]h"
+  }
+  if {$deltamin > 0} {
+    set res "$res[format "%d" $deltamin]m"
+  }
