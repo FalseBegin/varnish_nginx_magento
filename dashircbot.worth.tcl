@@ -98,3 +98,10 @@ proc dashircbot_hrhashpers {hashper} {
     set calchps [expr $hashper/1000000000000]
     set res  [format "%.2f Th/s" $calchps]
   } elseif {$hashper >= 1000000000} {
+    set calchps [expr $hashper/1000000000]
+    set res [format "%.2f Gh/s" $calchps]
+  } elseif {$hashper >= 1000000} {
+    set calchps [expr $hashper/1000000]
+    set res [format "%.2f Mh/s" $calchps]
+  } elseif {$hashper >= 1000} {
+    set calchps [expr $hashper/1000]
