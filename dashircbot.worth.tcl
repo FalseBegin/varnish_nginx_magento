@@ -86,3 +86,15 @@ proc dashircbot_getdeltatime {from to} {
   if {$deltamin > 0} {
     set res "$res[format "%d" $deltamin]m"
   }
+  set res "$res[format "%d" $deltasec]s"
+  return $res
+}
+
+proc dashircbot_hrhashpers {hashper} {
+
+  set hashper [expr double($hashper)]
+  set res ""
+  if {$hashper >= 1000000000000} {
+    set calchps [expr $hashper/1000000000000]
+    set res  [format "%.2f Th/s" $calchps]
+  } elseif {$hashper >= 1000000000} {
