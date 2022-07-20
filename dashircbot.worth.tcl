@@ -105,3 +105,18 @@ proc dashircbot_hrhashpers {hashper} {
     set res [format "%.2f Mh/s" $calchps]
   } elseif {$hashper >= 1000} {
     set calchps [expr $hashper/1000]
+    set res [format "%.2f kh/s" $calchps]
+  } else {
+    set res "$hashper h/s"
+  }
+  return $res
+}
+
+proc dashircbot_unavailable {header lang} {
+  puthelp "$header [dict get [dict get $::dashircbot_translation "action_unavailable"] $lang]"
+}
+
+proc dashircbot_refresh_tablevar {} {
+  set now [clock seconds]
+  if {$now > [expr $::dashircbot_tablevarlast+$::dashircbot_tablevar_refreshinterval]} {
+    putlog "dashircbot v$::dashircbot_version ($::dashircbot_worth_script v$::dashircbot_worth_subversion) \[I\] [lindex [info level 0] 0] refreshing tablevar (last from [clock format $::dashircbot_tablevarlast -format {%Y-%m-%d %H:%M:%S} -gmt true])"
