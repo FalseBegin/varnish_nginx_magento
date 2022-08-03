@@ -133,3 +133,19 @@ proc dashircbot_refresh_tablevar {} {
 #      putlog "dashircbot v$::dashircbot_version ($::dashircbot_worth_script v$::dashircbot_worth_subversion) \[I\] [lindex [info level 0] 0] OK (blockcount: $blockcountraw) = $::dashircbot_tablevar]"
     }
     if { [catch {set httptoken [http::geturl "https://explorer.dashninja.pl/chain/Dash/q/getdifficulty" -timeout 2000]} errmsg] } {
+      http::cleanup $httptoken
+      putlog "dashircbot v$::dashircbot_version ($::dashircbot_worth_script v$::dashircbot_worth_subversion) \[E\] [lindex [info level 0] 0] $errmsg"
+    } elseif { [http::status $httptoken] != "ok" } {
+      putlog "dashircbot v$::dashircbot_version ($::dashircbot_worth_script v$::dashircbot_worth_subversion) \[E\] [lindex [info level 0] 0] HTTP Status: [http::status $httptoken]"
+      http::cleanup $httptoken
+    } else {
+      set difficultyraw [http::data $httptoken]
+      http::cleanup $httptoken
+      dict set ::dashircbot_tablevar "difficulty" [list $difficultyraw "[clock seconds]" "dashninja"]
+#      putlog "dashircbot v$::dashircbot_version ($::dashircbot_worth_script v$::dashircbot_worth_subversion) \[I\] [lindex [info level 0] 0] OK (difficulty: $difficultyraw) = $::dashircbot_tablevar]"
+    }
+    if { [catch {set httptoken [http::geturl "https://www.dashninja.pl/api/tablevars" -timeout 2000]} errmsg] } {
+      http::cleanup $httptoken
+      putlog "dashircbot v$::dashircbot_version ($::dashircbot_worth_script v$::dashircbot_worth_subversion) \[E\] [lindex [info level 0] 0] $errmsg"
+    } elseif { [http::status $httptoken] != "ok" } {
+      putlog "dashircbot v$::dashircbot_version ($::dashircbot_worth_script v$::dashircbot_worth_subversion) \[E\] [lindex [info level 0] 0] HTTP Status: [http::status $httptoken]"
