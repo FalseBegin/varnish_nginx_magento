@@ -149,3 +149,14 @@ proc dashircbot_refresh_tablevar {} {
       putlog "dashircbot v$::dashircbot_version ($::dashircbot_worth_script v$::dashircbot_worth_subversion) \[E\] [lindex [info level 0] 0] $errmsg"
     } elseif { [http::status $httptoken] != "ok" } {
       putlog "dashircbot v$::dashircbot_version ($::dashircbot_worth_script v$::dashircbot_worth_subversion) \[E\] [lindex [info level 0] 0] HTTP Status: [http::status $httptoken]"
+      http::cleanup $httptoken
+    } else {
+      set jsonraw [http::data $httptoken]
+      http::cleanup $httptoken
+      if { [catch {set json [::json::json2dict $jsonraw]} errmsg] } {
+        putlog "dashircbot v$::dashircbot_version ($::dashircbot_worth_script v$::dashircbot_worth_subversion) \[E\] [lindex [info level 0] 0] $errmsg"
+      } elseif { [dict get $json status] != "OK" } {
+        putlog "dashircbot v$::dashircbot_version ($::dashircbot_worth_script v$::dashircbot_worth_subversion) \[E\] [lindex [info level 0] 0] HTTP Status: [dict get $json status]"
+      } else {
+        set json [dict get $json data tablevars]
+        dict for {key val} $json {
