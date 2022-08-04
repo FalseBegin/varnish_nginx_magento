@@ -160,3 +160,19 @@ proc dashircbot_refresh_tablevar {} {
       } else {
         set json [dict get $json data tablevars]
         dict for {key val} $json {
+          dict set ::dashircbot_tablevar $key [list [dict get $val StatValue] [dict get $val LastUpdate] [dict get $val Source]];
+#          putlog "dashircbot v$::dashircbot_version ($::dashircbot_worth_script v$::dashircbot_worth_subversion) \[I\] [lindex [info level 0] 0] OK ($key: [dict get $val StatValue]) = $::dashircbot_tablevar]"
+        }
+        set ::dashircbot_tablevarlast [clock seconds]
+      }
+    }
+  }
+  return [expr $::dashircbot_tablevarlast != 0]
+}
+
+proc dashircbot_tablevar_fetch { key } {
+  if [dict exists $::dashircbot_tablevar $key] {
+    return [dict get $::dashircbot_tablevar $key]
+  } else {
+    return [list false false false]
+  }
