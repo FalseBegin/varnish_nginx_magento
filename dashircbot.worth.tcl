@@ -176,3 +176,16 @@ proc dashircbot_tablevar_fetch { key } {
   } else {
     return [list false false false]
   }
+}
+
+proc do_worth {action fiat nick chan param} {
+  putlog "dashircbot v$::dashircbot_version ($::dashircbot_worth_script v$::dashircbot_worth_subversion) \[I\] [lindex [info level 0] 0] action $action $fiat from $nick in $chan"
+  if {[string tolower $nick] == "alit"} {
+    set header "PRIVMSG $nick :"
+    puthelp "PRIVMSG $chan :$nick: 8===3 ~º ( O )"
+    return
+  }
+  if {$chan == "PRIVATE"} {
+    set header "PRIVMSG $nick :"
+  } else {
+    set header "PRIVMSG $chan :$nick:"
