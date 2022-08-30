@@ -189,3 +189,11 @@ proc do_worth {action fiat nick chan param} {
     set header "PRIVMSG $nick :"
   } else {
     set header "PRIVMSG $chan :$nick:"
+  }
+  if {$chan == "#dash-fr"} {
+    set lang "fr"
+  } else {
+    set lang "en"
+  }
+  if {[dashircbot_refresh_tablevar]} {
+    set btcdrk [dashircbot_tablevar_fetch "btcdrk"]
