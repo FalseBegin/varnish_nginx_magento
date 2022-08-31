@@ -211,3 +211,20 @@ proc do_worth {action fiat nick chan param} {
       dashircbot_unavailable $header $lang
       return
     }
+    set mnactivecount [dashircbot_tablevar_fetch "mnactive"]
+    if { [lindex $mnactivecount 0] == false } {
+      dashircbot_unavailable $header $lang
+      return
+    }
+    set mnactiveathcount [dashircbot_tablevar_fetch "mnactiveath"]
+    if { [lindex $mnactiveathcount 0] == false } {
+      dashircbot_unavailable $header $lang
+      return
+    }
+    set last24hsupply [dashircbot_tablevar_fetch "last24hsupply"]
+    if { [lindex $last24hsupply 0] == false } {
+      dashircbot_unavailable $header $lang
+      return
+    }
+    set paymentdrk [dashircbot_tablevar_fetch "paymentdrk"]
+    if { [lindex $paymentdrk 0] == false } {
