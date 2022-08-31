@@ -197,3 +197,17 @@ proc do_worth {action fiat nick chan param} {
   }
   if {[dashircbot_refresh_tablevar]} {
     set btcdrk [dashircbot_tablevar_fetch "btcdrk"]
+    if { [lindex $btcdrk 0] == false } {
+      dashircbot_unavailable $header $lang
+      return
+    }
+    set eurobtc [dashircbot_tablevar_fetch "eurobtc"]
+    if { [lindex $eurobtc 0] == false } {
+      dashircbot_unavailable $header $lang
+      return
+    }
+    set usdbtc [dashircbot_tablevar_fetch "usdbtc"]
+    if { [lindex $usdbtc 0] == false } {
+      dashircbot_unavailable $header $lang
+      return
+    }
