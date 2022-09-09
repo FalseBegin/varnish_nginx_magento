@@ -236,3 +236,15 @@ proc do_worth {action fiat nick chan param} {
       dashircbot_unavailable $header $lang
       return
     }
+    set minerpaymentratiodisp [expr round((1.0-double([lindex $mnpaymentratio 0]))*0.9*100)]
+    set mnpaymentratiodisp [expr round(double([lindex $mnpaymentratio 0])*0.9*100)]
+    set mnpayments [dashircbot_tablevar_fetch "mnpayments"]
+    if { [lindex $mnpayments 0] == false } {
+      dashircbot_unavailable $header $lang
+      return
+    }
+    set mcappos [dashircbot_tablevar_fetch "marketcappos"]
+    if { [lindex $mcappos 0] == false } {
+      dashircbot_unavailable $header $lang
+      return
+    }
