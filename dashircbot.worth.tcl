@@ -228,3 +228,11 @@ proc do_worth {action fiat nick chan param} {
     }
     set paymentdrk [dashircbot_tablevar_fetch "paymentdrk"]
     if { [lindex $paymentdrk 0] == false } {
+      dashircbot_unavailable $header $lang
+      return
+    }
+    set mnpaymentratio [dashircbot_tablevar_fetch "mnpaymentratio"]
+    if { [lindex $mnpaymentratio 0] == false } {
+      dashircbot_unavailable $header $lang
+      return
+    }
