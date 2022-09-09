@@ -260,3 +260,18 @@ proc do_worth {action fiat nick chan param} {
     }
     set mcapeur [dashircbot_tablevar_fetch "marketcapeur"]
     if { [lindex $mcapeur 0] == false } {
+      dashircbot_unavailable $header $lang
+      return
+    }
+    set mcapsupply [dashircbot_tablevar_fetch "marketcapsupply"]
+    if { [lindex $mcapsupply 0] == false } {
+      dashircbot_unavailable $header $lang
+      return
+    }
+    puts 2
+    set mcapvolbtc [dashircbot_tablevar_fetch "volumebtc"]
+    if { [lindex $mcapvolbtc 0] == false } {
+      dashircbot_unavailable $header $lang
+      return
+    }
+    set mcapvolusd [dashircbot_tablevar_fetch "volumeusd"]
