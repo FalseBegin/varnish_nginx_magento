@@ -288,3 +288,13 @@ proc do_worth {action fiat nick chan param} {
     if { [lindex $mcapchange 0] == false } {
       dashircbot_unavailable $header $lang
       return
+    }
+    puts 3
+    set difficulty [dashircbot_tablevar_fetch "difficulty"]
+    if { [lindex $difficulty 0] == false } {
+      dashircbot_unavailable $header $lang
+      return
+    }
+    set blockcount [dashircbot_tablevar_fetch "blockcount"]
+    if { [lindex $blockcount 0] == false } {
+      dashircbot_unavailable $header $lang
