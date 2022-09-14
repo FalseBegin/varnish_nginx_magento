@@ -298,3 +298,16 @@ proc do_worth {action fiat nick chan param} {
     set blockcount [dashircbot_tablevar_fetch "blockcount"]
     if { [lindex $blockcount 0] == false } {
       dashircbot_unavailable $header $lang
+      return
+    }
+    set networkhashpers [dashircbot_tablevar_fetch "networkhashpers"]
+    if { [lindex $networkhashpers 0] == false } {
+      dashircbot_unavailable $header $lang
+      return
+    }
+    set drkpermn [expr ([lindex $paymentdrk 0]/[lindex $mnactivecount 0])]
+    if {$action == "calc"} {
+      if {$param == ""} {
+        puthelp "$header [dict get [dict get $::dashircbot_translation "usage_calc"] $lang]"
+        return
+      }
