@@ -311,3 +311,20 @@ proc do_worth {action fiat nick chan param} {
         puthelp "$header [dict get [dict get $::dashircbot_translation "usage_calc"] $lang]"
         return
       }
+      if { [catch {set userhashpers [expr int($param)*1000]} errmsg] } {
+        puthelp "$header [dict get [dict get $::dashircbot_translation "usage_calc"] $lang]"
+        return
+      }
+      if { $userhashpers <= 0 } {
+        puthelp "$header [dict get [dict get $::dashircbot_translation "usage_calc"] $lang]"
+        return
+      }
+      set gaindash [expr ($userhashpers/double([lindex $networkhashpers 0]))*(double([lindex $last24hsupply 0])*(1-double([lindex $mnpaymentratio 0]))*0.9)]
+      set amountbtc [expr $gaindash*[lindex $btcdrk 0]]
+      if {$fiat == "EUR"} {
+        set amountfiat [expr $amountbtc*[lindex $eurobtc 0]]
+        set fiatsource [lindex $eurobtc 2]
+        set fiatdate [dashircbot_getdeltatime [lindex $eurobtc 1] [clock seconds]]
+      } else {
+        set amountfiat [expr $amountbtc*[lindex $usdbtc 0]]
+        set fiatsource [lindex $usdbtc 2]
