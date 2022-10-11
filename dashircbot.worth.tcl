@@ -365,3 +365,14 @@ proc do_worth {action fiat nick chan param} {
         set mcapfiat $mcapusd
         set mcapvol $mcapvolusd
       }
+      set outmsg [format [dict get [dict get $::dashircbot_translation "result_marketcap"] $lang] [expr int([lindex $mcappos 0])] [lindex $mcapbtc 0] [lindex $mcapfiat 0] $fiat [lindex $mcapsupply 0] [lindex $mcapvolbtc 0] [lindex $mcapvol 0] $fiat [lindex $mcapchange 0] [lindex $mcapbtc 2] [dashircbot_getdeltatime [lindex $mcapbtc 1] [clock seconds]]]
+    } elseif {$action == "mnstats"} {
+      set lockedbtc [expr [lindex $mnactivecount 0]*1000*[lindex $btcdrk 0]]
+      if {$fiat == "EUR"} {
+        set lockedfiat [expr $lockedbtc*[lindex $eurobtc 0]]
+        set fiatsource [lindex $eurobtc 2]
+        set fiatdate [dashircbot_getdeltatime [lindex $eurobtc 1] [clock seconds]]
+      } else {
+        set lockedfiat [expr $lockedbtc*[lindex $usdbtc 0]]
+        set fiatsource [lindex $usdbtc 2]
+        set fiatdate [dashircbot_getdeltatime [lindex $usdbtc 1] [clock seconds]]
