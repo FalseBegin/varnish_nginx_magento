@@ -351,3 +351,17 @@ proc do_worth {action fiat nick chan param} {
         set cursupply 25
       }
       for {set i 210240} {$i < $blockcount} {set i [expr $i+210240]} {
+        set cursupply [expr $cursupply-($cursupply/14.0)]
+      }
+      set cursupplymn [expr $cursupply*double([lindex $mnpaymentratio 0])*0.9]
+      set cursupplyminers [expr $cursupply*(1.0-double([lindex $mnpaymentratio 0]))*0.9]
+      set cursupplybudget [expr $cursupply-$cursupplymn-$cursupplyminers]
+      set outmsg [format [dict get [dict get $::dashircbot_translation "result_diff"] $lang] $difftext $diffval $diffsource $cursupplyminers $minerpaymentratiodisp $cursupplymn $mnpaymentratiodisp $cursupplybudget "10" $cursupply]
+    } elseif {$action == "marketcap"} {
+      if {$fiat == "EUR"} {
+        set mcapfiat $mcapeur
+        set mcapvol $mcapvoleur
+      } else {
+        set mcapfiat $mcapusd
+        set mcapvol $mcapvolusd
+      }
