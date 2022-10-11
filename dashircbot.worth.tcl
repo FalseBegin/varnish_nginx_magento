@@ -328,3 +328,10 @@ proc do_worth {action fiat nick chan param} {
       } else {
         set amountfiat [expr $amountbtc*[lindex $usdbtc 0]]
         set fiatsource [lindex $usdbtc 2]
+        set fiatdate [dashircbot_getdeltatime [lindex $usdbtc 1] [clock seconds]]
+      }
+      set outmsg [format [dict get [dict get $::dashircbot_translation "result_calc"] $lang] [lindex $last24hsupply 0] [lindex $last24hsupply 2] [dashircbot_getdeltatime [lindex $last24hsupply 1] [clock seconds]] [dashircbot_hrhashpers [lindex $networkhashpers 0]] [lindex $networkhashpers 2] [dashircbot_getdeltatime [lindex $networkhashpers 1] [clock seconds]] [dashircbot_hrhashpers $userhashpers] $gaindash [lindex $btcdrk 0] [lindex $btcdrk 2] [dashircbot_getdeltatime [lindex $btcdrk 1] [clock seconds]] $amountbtc $amountfiat $fiat $fiatsource $fiatdate]
+    } elseif {$action == "diff"} {
+      if {$param != ""} {
+        if { [catch {set diffval [expr double($param)]} errmsg] } {
+          puthelp "$header [dict get [dict get $::dashircbot_translation "usage_diff"] $lang]"
