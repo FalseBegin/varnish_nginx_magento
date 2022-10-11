@@ -335,3 +335,19 @@ proc do_worth {action fiat nick chan param} {
       if {$param != ""} {
         if { [catch {set diffval [expr double($param)]} errmsg] } {
           puthelp "$header [dict get [dict get $::dashircbot_translation "usage_diff"] $lang]"
+          return
+        }
+        set difftext [dict get [dict get $::dashircbot_translation "result_diff_asked"] $lang]
+        set diffsource ""
+      } else {
+        set diffval [expr double([lindex $difficulty 0])]
+        set difftext [dict get [dict get $::dashircbot_translation "result_diff_current"] $lang]
+        set diffsource [format [dict get [dict get $::dashircbot_translation "result_diff_source"] $lang] [lindex $difficulty 2] [dashircbot_getdeltatime [lindex $difficulty 1] [clock seconds]]]
+      }
+      set cursupply [expr round((2222222.0 / (pow(($diffval+2600.0)/9.0,2.0))))]
+      if {$cursupply < 5} {
+        set cursupply 5
+      } elseif {$cursupply > 25} {
+        set cursupply 25
+      }
+      for {set i 210240} {$i < $blockcount} {set i [expr $i+210240]} {
