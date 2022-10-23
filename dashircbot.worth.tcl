@@ -376,3 +376,10 @@ proc do_worth {action fiat nick chan param} {
         set lockedfiat [expr $lockedbtc*[lindex $usdbtc 0]]
         set fiatsource [lindex $usdbtc 2]
         set fiatdate [dashircbot_getdeltatime [lindex $usdbtc 1] [clock seconds]]
+      }
+      set outmsg [format [dict get [dict get $::dashircbot_translation "result_mnstats"] $lang] [lindex $mnactivecount 0] [lindex $mnactivecount 2] [dashircbot_getdeltatime [lindex $mnactivecount 1] [clock seconds]] [lindex $mnactiveathcount 0] [clock format [lindex $mnactiveathcount 1] -format "%d/%m/%Y %H:%M" -gmt 1] [lindex $btcdrk 0] [lindex $btcdrk 2] [dashircbot_getdeltatime [lindex $btcdrk 1] [clock seconds]] $lockedbtc $lockedfiat $fiat $fiatsource $fiatdate]
+    } elseif {$action == "mnworth"} {
+      if {$param == ""} {
+        set $param "1"
+      }
+      if { [catch {set numbermn [expr double($param)]} errmsg] } {
