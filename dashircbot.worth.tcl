@@ -391,3 +391,12 @@ proc do_worth {action fiat nick chan param} {
       }
       set amountdrk [expr $numbermn*$drkpermn*double([lindex $mnpayments 0])/100]
       set amountbtc [expr $amountdrk*[lindex $btcdrk 0]]
+      if {$fiat == "EUR"} {
+        set amountfiat [expr $amountbtc*[lindex $eurobtc 0]]
+        set fiatsource [lindex $eurobtc 2]
+        set fiatdate [dashircbot_getdeltatime [lindex $eurobtc 1] [clock seconds]]
+      } else {
+        set amountfiat [expr $amountbtc*[lindex $usdbtc 0]]
+        set fiatsource [lindex $usdbtc 2]
+        set fiatdate [dashircbot_getdeltatime [lindex $usdbtc 1] [clock seconds]]
+      }
