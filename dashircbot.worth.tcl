@@ -383,3 +383,11 @@ proc do_worth {action fiat nick chan param} {
         set $param "1"
       }
       if { [catch {set numbermn [expr double($param)]} errmsg] } {
+        set numbermn 1.0
+      }
+      if { $numbermn <= 0 } {
+        puthelp "$header [dict get [dict get $::dashircbot_translation "usage_mnworth"] $lang]"
+        return
+      }
+      set amountdrk [expr $numbermn*$drkpermn*double([lindex $mnpayments 0])/100]
+      set amountbtc [expr $amountdrk*[lindex $btcdrk 0]]
