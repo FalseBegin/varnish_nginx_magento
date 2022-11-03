@@ -413,3 +413,15 @@ proc do_worth {action fiat nick chan param} {
           return
         }
         set firstchar [string index $param 0]
+        if {$firstchar != "X"} {
+          puthelp "$header [dict get [dict get $::dashircbot_translation "usage_worth"] $lang]"
+          return
+        }
+        if { [catch {set wsresult [http::data [http::geturl "https://explorer.dashninja.pl/chain/Dash/q/addressbalance/$param" -timeout 2000]]} errmsg] } {
+          putlog "dashircbot v$::dashircbot_version ($::dashircbot_worth_script v$::dashircbot_worth_subversion) \[E\] [lindex [info level 0] 0] webservice error: $errmsg"
+          puthelp "$header [dict get [dict get $::dashircbot_translation "usage_worth"] $lang]"
+          return
+        }
+        if { [catch {set amountdrk [expr double($wsresult)]} errmsg] } {
+          puthelp "$header [dict get [dict get $::dashircbot_translation "usage_worth"] $lang]"
+          return
