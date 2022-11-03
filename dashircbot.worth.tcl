@@ -400,3 +400,16 @@ proc do_worth {action fiat nick chan param} {
         set fiatsource [lindex $usdbtc 2]
         set fiatdate [dashircbot_getdeltatime [lindex $usdbtc 1] [clock seconds]]
       }
+      set outmsg [format [dict get [dict get $::dashircbot_translation "result_mnworth"] $lang] $numbermn $amountdrk [lindex $last24hsupply 2] [dashircbot_getdeltatime [lindex $last24hsupply 1] [clock seconds]] [lindex $mnpayments 0] $mnpaymentratiodisp [lindex $mnpayments 2] [dashircbot_getdeltatime [lindex $mnpayments 1] [clock seconds]] [lindex $btcdrk 0] [lindex $btcdrk 2] [dashircbot_getdeltatime [lindex $btcdrk 1] [clock seconds]] $amountbtc $amountfiat $fiat $fiatsource $fiatdate]
+    } elseif {$action == "worth"} {
+      if {$param == ""} {
+        puthelp "$header [dict get [dict get $::dashircbot_translation "usage_worth"] $lang]"
+        return
+      }
+      if { [catch {set amountdrk [expr double($param)]} errmsg] } {
+        set lenparam [string length $param]
+        if {$lenparam != 34} {
+          puthelp "$header [dict get [dict get $::dashircbot_translation "usage_worth"] $lang]"
+          return
+        }
+        set firstchar [string index $param 0]
