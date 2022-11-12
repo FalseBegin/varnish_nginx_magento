@@ -425,3 +425,16 @@ proc do_worth {action fiat nick chan param} {
         if { [catch {set amountdrk [expr double($wsresult)]} errmsg] } {
           puthelp "$header [dict get [dict get $::dashircbot_translation "usage_worth"] $lang]"
           return
+        }
+      }
+      if { $amountdrk <= 0 } {
+        puthelp "$header [dict get [dict get $::dashircbot_translation "usage_worth"] $lang]"
+        return
+      }
+      set amountbtc [expr $amountdrk*[lindex $btcdrk 0]]
+      if {$fiat == "EUR"} {
+        set amountfiat [expr $amountbtc*[lindex $eurobtc 0]]
+        set fiatsource [lindex $eurobtc 2]
+        set fiatdate [dashircbot_getdeltatime [lindex $eurobtc 1] [clock seconds]]
+      } else {
+        set amountfiat [expr $amountbtc*[lindex $usdbtc 0]]
