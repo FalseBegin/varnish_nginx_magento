@@ -438,3 +438,20 @@ proc do_worth {action fiat nick chan param} {
         set fiatdate [dashircbot_getdeltatime [lindex $eurobtc 1] [clock seconds]]
       } else {
         set amountfiat [expr $amountbtc*[lindex $usdbtc 0]]
+        set fiatsource [lindex $usdbtc 2]
+        set fiatdate [dashircbot_getdeltatime [lindex $usdbtc 1] [clock seconds]]
+      }
+      set outmsg [format [dict get [dict get $::dashircbot_translation "result_worth"] $lang] $amountdrk [lindex $btcdrk 0] [lindex $btcdrk 2] [dashircbot_getdeltatime [lindex $btcdrk 1] [clock seconds]] $amountbtc $amountfiat $fiat $fiatsource $fiatdate]
+    } else {
+     set outmsg [format [dict get [dict get $::dashircbot_translation "action_unknown"] $lang] $action]
+    }
+    puthelp "$header $outmsg"
+  } else {
+    dashircbot_unavailable $header $lang
+  }
+}
+
+# Bindings
+
+# !calc
+proc pub:calcusd {nick host handle chan {text ""}} {
