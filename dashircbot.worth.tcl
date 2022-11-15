@@ -455,3 +455,18 @@ proc do_worth {action fiat nick chan param} {
 
 # !calc
 proc pub:calcusd {nick host handle chan {text ""}} {
+  do_worth "calc" "USD" $nick $chan $text
+}
+proc msg:calcusd {nick uhost handle text} {
+  do_worth "calc" "USD" $nick "PRIVATE" $text
+}
+proc pub:calceur {nick host handle chan {text ""}} {
+  do_worth "calc" "EUR" $nick $chan $text
+}
+proc msg:calceur {nick uhost handle text} {
+  do_worth "calc" "EUR" $nick "PRIVATE" $text
+}
+# !diff
+proc pub:diff {nick host handle chan {text ""}} {
+  do_worth "diff" "" $nick $chan $text
+}
