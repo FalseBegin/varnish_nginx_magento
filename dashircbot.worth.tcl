@@ -470,3 +470,10 @@ proc msg:calceur {nick uhost handle text} {
 proc pub:diff {nick host handle chan {text ""}} {
   do_worth "diff" "" $nick $chan $text
 }
+proc msg:diff {nick uhost handle text} {
+  do_worth "diff" "" $nick "PRIVATE" $text
+}
+# !marketcap*
+proc pub:marketcapusd {nick host handle chan {text ""}} {
+  do_worth "marketcap" "USD" $nick $chan ""
+}
