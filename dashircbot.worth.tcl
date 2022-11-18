@@ -477,3 +477,15 @@ proc msg:diff {nick uhost handle text} {
 proc pub:marketcapusd {nick host handle chan {text ""}} {
   do_worth "marketcap" "USD" $nick $chan ""
 }
+proc msg:marketcapusd {nick uhost handle text} {
+  do_worth "marketcap" "USD" $nick "PRIVATE" ""
+}
+proc pub:marketcapeur {nick host handle chan {text ""}} {
+  do_worth "marketcap" "EUR" $nick $chan ""
+}
+proc msg:marketcapeur {nick uhost handle text} {
+  do_worth "marketcap" "EUR" $nick "PRIVATE" ""
+}
+# !mnstats*
+proc pub:mnstatsusd {nick host handle chan {text ""}} {
+  do_worth "mnstats" "USD" $nick $chan ""
