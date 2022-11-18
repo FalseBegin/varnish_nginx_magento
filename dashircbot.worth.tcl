@@ -489,3 +489,14 @@ proc msg:marketcapeur {nick uhost handle text} {
 # !mnstats*
 proc pub:mnstatsusd {nick host handle chan {text ""}} {
   do_worth "mnstats" "USD" $nick $chan ""
+}
+proc msg:mnstatsusd {nick uhost handle text} {
+  do_worth "mnstats" "USD" $nick "PRIVATE" ""
+}
+proc pub:mnstatseur {nick host handle chan {text ""}} {
+  do_worth "mnstats" "EUR" $nick $chan ""
+}
+proc msg:mnstatseur {nick uhost handle text} {
+  do_worth "mnstats" "EUR" $nick "PRIVATE" ""
+}
+# !mnworth*
