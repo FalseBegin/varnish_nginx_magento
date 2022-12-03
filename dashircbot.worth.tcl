@@ -500,3 +500,10 @@ proc msg:mnstatseur {nick uhost handle text} {
   do_worth "mnstats" "EUR" $nick "PRIVATE" ""
 }
 # !mnworth*
+proc pub:mnworthusd {nick host handle chan {text ""}} {
+  do_worth "mnworth" "USD" $nick $chan $text
+}
+proc msg:mnworthusd {nick uhost handle text} {
+  do_worth "mnworth" "USD" $nick "PRIVATE" $text
+}
+proc pub:mnwortheur {nick host handle chan {text ""}} {
