@@ -507,3 +507,10 @@ proc msg:mnworthusd {nick uhost handle text} {
   do_worth "mnworth" "USD" $nick "PRIVATE" $text
 }
 proc pub:mnwortheur {nick host handle chan {text ""}} {
+  do_worth "mnworth" "EUR" $nick $chan $text
+}
+proc msg:mnwortheur {nick uhost handle text} {
+  do_worth "mnworth" "EUR" $nick "PRIVATE" $text
+}
+# !worth*
+proc pub:worthusd {nick host handle chan {text ""}} {
