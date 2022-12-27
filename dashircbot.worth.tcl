@@ -528,3 +528,10 @@ proc msg:wortheur {nick uhost handle text} {
 
 bind msg - !calc msg:calcusd
 bind pub - !calc pub:calcusd
+bind msg - !calcusd msg:calcusd
+bind pub - !calcusd pub:calcusd
+bind msg - !calceur msg:calceur
+bind pub - !calceur pub:calceur
+
+lappend dashircbot_command_fr { {!calceur & !calcusd} {Gain de minage} }
+lappend dashircbot_command_en { {!calceur & !calcusd} {Mining earnings} }
