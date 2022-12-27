@@ -514,3 +514,17 @@ proc msg:mnwortheur {nick uhost handle text} {
 }
 # !worth*
 proc pub:worthusd {nick host handle chan {text ""}} {
+  do_worth "worth" "USD" $nick $chan $text
+}
+proc msg:worthusd {nick uhost handle text} {
+  do_worth "worth" "USD" $nick "PRIVATE" $text
+}
+proc pub:wortheur {nick host handle chan {text ""}} {
+  do_worth "worth" "EUR" $nick $chan $text
+}
+proc msg:wortheur {nick uhost handle text} {
+  do_worth "worth" "EUR" $nick "PRIVATE" $text
+}
+
+bind msg - !calc msg:calcusd
+bind pub - !calc pub:calcusd
