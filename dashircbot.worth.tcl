@@ -535,3 +535,20 @@ bind pub - !calceur pub:calceur
 
 lappend dashircbot_command_fr { {!calceur & !calcusd} {Gain de minage} }
 lappend dashircbot_command_en { {!calceur & !calcusd} {Mining earnings} }
+
+bind msg - !diff msg:diff
+bind pub - !diff pub:diff
+
+lappend dashircbot_command_fr { {!diff} {DifficultÃ©} }
+lappend dashircbot_command_en { {!diff} {Difficulty} }
+
+bind msg - !marketcap msg:marketcapusd
+bind pub - !marketcap pub:marketcapusd
+bind msg - !marketcapusd msg:marketcapusd
+bind pub - !marketcapusd pub:marketcapusd
+bind msg - !marketcapeur msg:marketcapeur
+bind pub - !marketcapeur pub:marketcapeur
+bind msg - !marketcapeuro msg:marketcapeur
+bind pub - !marketcapeuro pub:marketcapeur
+
+lappend dashircbot_command_fr { {!marketcapeur & !marketcapusd} {Capitalisation du Marché} }
