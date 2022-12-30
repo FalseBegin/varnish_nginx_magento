@@ -552,3 +552,18 @@ bind msg - !marketcapeuro msg:marketcapeur
 bind pub - !marketcapeuro pub:marketcapeur
 
 lappend dashircbot_command_fr { {!marketcapeur & !marketcapusd} {Capitalisation du Marché} }
+lappend dashircbot_command_en { {!marketcapeur & !marketcapusd} {Market Capitalizations} }
+
+bind msg - !mnstats msg:mnstatsusd
+bind pub - !mnstats pub:mnstatsusd
+bind msg - !mnstatsusd msg:mnstatsusd
+bind pub - !mnstatsusd pub:mnstatsusd
+bind msg - !mnstatseur msg:mnstatseur
+bind pub - !mnstatseur pub:mnstatseur
+bind msg - !mnstatseuro msg:mnstatseur
+bind pub - !mnstatseuro pub:mnstatseur
+
+lappend dashircbot_command_fr { {!mnstatseur & !mnstatsusd} {Statistiques Masternodes} }
+lappend dashircbot_command_en { {!mnstatseur & !mnstatsusd} {Masternode Statistics} }
+
+bind msg - !mnwortheuro msg:mnwortheur
