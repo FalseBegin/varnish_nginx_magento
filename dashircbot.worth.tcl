@@ -567,3 +567,16 @@ lappend dashircbot_command_fr { {!mnstatseur & !mnstatsusd} {Statistiques Master
 lappend dashircbot_command_en { {!mnstatseur & !mnstatsusd} {Masternode Statistics} }
 
 bind msg - !mnwortheuro msg:mnwortheur
+bind pub - !mnwortheuro pub:mnwortheur
+bind msg - !mnwortheur msg:mnwortheur
+bind pub - !mnwortheur pub:mnwortheur
+bind msg - !mnvaleur msg:mnwortheur
+bind pub - !mnvaleur pub:mnwortheur
+bind msg - !mnworth msg:mnworthusd
+bind pub - !mnworth pub:mnworthusd
+bind msg - !mnworthusd msg:mnworthusd
+bind pub - !mnworthusd pub:mnworthusd
+bind msg - !mnvaleurusd msg:mnworthusd
+bind pub - !mnvaleurusd pub:mnworthusd
+bind msg - !mnv msg:mnwortheur
+bind pub - !mnv pub:mnwortheur
