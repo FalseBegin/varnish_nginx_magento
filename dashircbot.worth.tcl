@@ -580,3 +580,13 @@ bind msg - !mnvaleurusd msg:mnworthusd
 bind pub - !mnvaleurusd pub:mnworthusd
 bind msg - !mnv msg:mnwortheur
 bind pub - !mnv pub:mnwortheur
+bind msg - !mnw msg:mnworthusd
+bind pub - !mnw pub:mnworthusd
+
+lappend dashircbot_command_fr { {!mnvaleureur, !mnv, !mnvaleurusd & !mnw} {Gain Masternodes} }
+lappend dashircbot_command_en { {!mnwortheur, !mnv, !mnworthusd & !mnw} {Masternode worth} }
+
+bind msg - !wortheuro msg:wortheur
+bind pub - !wortheuro pub:wortheur
+bind msg - !wortheur msg:wortheur
+bind pub - !wortheur pub:wortheur
