@@ -590,3 +590,10 @@ bind msg - !wortheuro msg:wortheur
 bind pub - !wortheuro pub:wortheur
 bind msg - !wortheur msg:wortheur
 bind pub - !wortheur pub:wortheur
+bind msg - !valeur msg:wortheur
+bind pub - !valeur pub:wortheur
+bind msg - !v msg:wortheur
+bind pub - !v pub:wortheur
+bind msg - !valeureur msg:wortheur
+bind pub - !valeureur pub:wortheur
+bind msg - !worth msg:worthusd
