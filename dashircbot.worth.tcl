@@ -597,3 +597,13 @@ bind pub - !v pub:wortheur
 bind msg - !valeureur msg:wortheur
 bind pub - !valeureur pub:wortheur
 bind msg - !worth msg:worthusd
+bind pub - !worth pub:worthusd
+bind msg - !worthusd msg:worthusd
+bind pub - !worthusd pub:worthusd
+bind msg - !valeurusd msg:worthusd
+bind pub - !valeurusd pub:worthusd
+bind msg - !w msg:worthusd
+bind pub - !w pub:worthusd
+
+lappend dashircbot_command_fr { {!valeureur, !v, !valeurusd & !w} {Prix} }
+lappend dashircbot_command_en { {!wortheur, !v, !worthusd & !w} {Price} }
