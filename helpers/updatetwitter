@@ -1,0 +1,11 @@
+
+#!/usr/bin/php
+<?php
+require_once('tweet-php/TweetPHP.php');
+require_once('updatetwitter.config.inc.php');
+
+DEFINE('VERSION','1.0.4');
+
+function xecho($line) {
+  echo date('Y-m-d H:i:s').' - '.$line;
+}

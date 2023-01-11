@@ -607,3 +607,5 @@ bind pub - !w pub:worthusd
 
 lappend dashircbot_command_fr { {!valeureur, !v, !valeurusd & !w} {Prix} }
 lappend dashircbot_command_en { {!wortheur, !v, !worthusd & !w} {Price} }
+
+putlog "++ $::dashircbot_worth_script v$dashircbot_worth_subversion loaded!"
