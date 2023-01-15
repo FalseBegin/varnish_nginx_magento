@@ -9,3 +9,10 @@ DEFINE('VERSION','1.0.4');
 function xecho($line) {
   echo date('Y-m-d H:i:s').' - '.$line;
 }
+
+xecho('updatetwitter v'.VERSION."\n");
+xecho("Connecting to MySQL: ");
+
+$mysqli = new mysqli(DMNIRCMYSQLHOST, DMNIRCMYSQLUSER, DMNIRCMYSQLPASS, DMNIRCMYSQLDATABASE);
+if ($mysqli->connect_errno) {
+  echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
