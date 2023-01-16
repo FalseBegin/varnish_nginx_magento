@@ -51,3 +51,7 @@ if ($result = $mysqli->query($query)) {
   $maxtweet = $row[0];
   echo "OK ($maxtweet)\n";
 }
+else {
+  $maxtweet = 0;
+  echo "Not found\n";
+}
