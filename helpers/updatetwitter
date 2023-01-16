@@ -24,3 +24,14 @@ function get_tweets($screenname) {
 
 $TweetPHP = new TweetPHP(array(
       'consumer_key'              => DMNIRC_TWITTER_CONSUMER_KEY,
+      'consumer_secret'           => DMNIRC_TWITTER_CONSUMER_SECRET,
+      'access_token'              => DMNIRC_TWITTER_ACCESS_TOKEN,
+      'access_token_secret'       => DMNIRC_TWITTER_ACCESS_TOKEN_SECRET,
+      'twitter_screen_name'       => $screenname,
+      'date_format'               => '%Y-%m-%d %H:%i:%s',
+      'cache_file'                => dirname(__FILE__) . '/cache/twitter_'.$screenname.'.txt',
+      'cache_file_raw'            => dirname(__FILE__) . '/cache/twitter_'.$screenname.'-array.txt',
+      'cachetime'                 => 300,
+      'tweets_to_display'         => 5,
+      'format'                    => 'array'
+    ));
