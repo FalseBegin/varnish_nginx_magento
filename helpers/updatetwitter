@@ -35,3 +35,19 @@ $TweetPHP = new TweetPHP(array(
       'tweets_to_display'         => 5,
       'format'                    => 'array'
     ));
+
+$tweetlist = $TweetPHP->get_tweet_array();
+
+return $tweetlist;
+
+}
+
+$screenname = DMNIRC_TWITTER_SCREENNAME;
+
+xecho('Retrieving latest known tweet: ');
+$query = "SELECT MAX(id) FROM cmd_twitter WHERE account = '".$mysqli->real_escape_string($screenname)."' LIMIT 1";
+if ($result = $mysqli->query($query)) {
+  $row = $result->fetch_array();
+  $maxtweet = $row[0];
+  echo "OK ($maxtweet)\n";
+}
