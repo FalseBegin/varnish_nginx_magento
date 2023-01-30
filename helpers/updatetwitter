@@ -55,3 +55,17 @@ else {
   $maxtweet = 0;
   echo "Not found\n";
 }
+
+xecho('Retrieving tweets from Twitter: ');
+$dashcrypto = get_tweets($screenname);
+echo "OK (".count($dashcrypto)." tweets retrieved)\n";
+xecho("Checking for new ones: ");
+$query = "INSERT INTO cmd_twitter (`account`, `id`, `created_at`, `text`) VALUES %s";
+$sql = array();
+foreach ($dashcrypto as $tweet) {
+  if ($tweet['id'] > $maxtweet) {
+    $cdate = new DateTime($tweet['created_at']);
+    $sql[] = sprintf("('%s',%d,'%s','%s')",$mysqli->real_escape_string($screenname),$tweet['id'],gmdate('Y-m-d H:i:s',$cdate->gettimestamp()),$mysqli->real_escape_string($tweet['text']));
+  }
+}
+echo "Done (".count($sql)." new tweets)\n";
