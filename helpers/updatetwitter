@@ -80,3 +80,5 @@ if (count($sql) > 0) {
   }
 }
 $mysqli->close();
+
+?>
