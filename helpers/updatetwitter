@@ -69,3 +69,14 @@ foreach ($dashcrypto as $tweet) {
   }
 }
 echo "Done (".count($sql)." new tweets)\n";
+if (count($sql) > 0) {
+  xecho('Submitting to MySQL: ');
+  $query = sprintf($query,implode(',',$sql));
+  if ($mysqli->query($query)) {
+    echo "OK\n";
+  }
+  else {
+    echo "Failed (" . $mysqli->errno . ") " . $mysqli->error."\n";
+  }
+}
+$mysqli->close();
