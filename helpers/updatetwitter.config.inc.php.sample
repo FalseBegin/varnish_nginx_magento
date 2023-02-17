@@ -17,3 +17,18 @@
  */
 
 // MySQL access, user needs write access to Dash Ninja Database cmd_twitter table
+DEFINE('DMNIRCMYSQLUSER','dashninja-irc');
+DEFINE('DMNIRCMYSQLPASS','randompassword');
+DEFINE('DMNIRCMYSQLDATABASE','dashninja');
+DEFINE('DMNIRCMYSQLHOST','localhost');
+
+// Define Twitter API keys (see tweet-php README.md)
+DEFINE('DMNIRC_TWITTER_CONSUMER_KEY','xxx');
+DEFINE('DMNIRC_TWITTER_CONSUMER_SECRET','xxx');
+DEFINE('DMNIRC_TWITTER_ACCESS_TOKEN','xxx');
+DEFINE('DMNIRC_TWITTER_ACCESS_TOKEN_SECRET','xxx');
+
+// Twitter user to follow
+DEFINE('DMNIRC_TWITTER_SCREENNAME','@dashpay');
+
+?>
